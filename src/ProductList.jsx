@@ -8,11 +8,11 @@ function ProductList({ onHomeClick }) {
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
 
-    const handleAddToCart = (product) => {
-  dispatch(addItem(product));
+    const handleAddToCart = (item) => {
+  dispatch(addItem(item));
   setAddedToCart((prevState) => ({
      ...prevState,
-     [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+     [item.name]: true, // Set the product name as key and value as true to indicate it's added to cart
    }));
 };
     const plantsArray = [
@@ -290,11 +290,11 @@ function ProductList({ onHomeClick }) {
         <div className="product-list">
             {category.plants.map((plant, plantIndex) => (
             <div className="product-card" key={plantIndex}>
-                <img className="product-image" src={plant.image} alt={plant.name} />
+                <img className="product-image" src={plant.image} alt={item.name} />
                 <div className="product-title">{plant.name}</div>
                 <div className="product-description">{plant.description}</div>
                 <div className="product-cost">{plant.cost}</div>
-                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                <button  className="product-button" onClick={() => handleAddToCart(item)}>Add to Cart</button>
             </div>
             ))}
         </div>
