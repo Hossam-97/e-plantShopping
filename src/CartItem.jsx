@@ -46,7 +46,7 @@ return total.toFixed(2);
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (cost, quantity) => {
-    return (parseFloat(cost.substring(1)*quantity)).toFixed(2);
+    return (parseFloat(cost.substring(1))*quantity).toFixed(2);
   };
 
   return (
