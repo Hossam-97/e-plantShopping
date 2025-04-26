@@ -10,7 +10,6 @@ function ProductList({ onHomeClick }) {
     const [addedToCart, setAddedToCart] = useState({});
     const dispatch = useDispatch();
 
-
    const handleAddToCart = (product) => {
   console.log (product)
     dispatch(addItem(product));
@@ -18,6 +17,7 @@ function ProductList({ onHomeClick }) {
      ...prevState,
      [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
    }));
+
 };
     const plantsArray = [
         {
@@ -299,7 +299,9 @@ function ProductList({ onHomeClick }) {
                  <div className="product-description">{plant.description}</div>
                   <div className="product-cost">{plant.cost}</div>
                 {/*Similarly like the above plant.name show other details like description and cost*/}
-                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                {addedToCart[plant.name] ? (<button disabled className="product-button-disabled">Added to Cart</button>)
+                :
+                (<button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>)}
             </div>
             ))}
         </div>
