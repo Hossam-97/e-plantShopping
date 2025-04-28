@@ -25,16 +25,7 @@ function ProductList({ onHomeClick }) {
      [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
    }));
 
-   const handleRemoveFromCart = (product) => {
-    dispatch(removeItem(product.name)); // Remove from cart
-    setAddedToCart(prevState => ({
-        ...prevState,
-        [product.name]: false, // Mark as removed from cart
-    }));
-};
-
-
-
+  
 };
     const plantsArray = [
         {
