@@ -54,7 +54,7 @@ return total.toFixed(2);
     } else if (typeof cost === 'number') {
       numericCost = cost;
     } else {
-      return '0.00';
+      return ;
     }
   
     return (numericCost * quantity).toFixed(2);
